@@ -62,11 +62,11 @@ const userBalances = {
 **3. If we wanted the balance to update on the frontend more often (10 times per second), how would you improve the current system to handle this?**
 
 > Since we want the balance to update on the frontend more often, this means that we would need to call the external api more often.
-
-It might be a good idea for our user balance API to be separated from the external API. As we need the data 10 times per second, I would use Bitstamp's websocket api instead of the HTTP api. This would provide real-time updates on the currency rates, which could be better suited for the requirements of the app.
-
-Due to the huge number of requests per second, I would ping the websocket api in the frontend instead of the backend as that is the data that would change more than the user's balance. This way, we would not have to ping the backend 10 times per second, and we only make a request to the backend when necessary (e.g. when the user's balance changes).
+> 
+> It might be a good idea for our user balance API to be separated from the external API. As we need the data 10 times per second, I would use Bitstamp's websocket   api instead of the HTTP api. This would provide real-time updates on the currency rates, which could be better suited for the requirements of the app.
+> 
+> Due to the huge number of requests per second, I would ping the websocket api in the frontend instead of the backend as that is the data that would change more     than the user's balance. This way, we would not have to ping the backend 10 times per second, and we only make a request to the backend when necessary (e.g. when   the user's balance changes).
 
 **4. How did you find the test overall? If you have any suggestions on how we can improve the test, we'd love to hear them!**
 
-> I found the test overall okay. I was especially intrigued by question 3 actually, the question was really fun and interesting to think about! I did not like using replit for the assessment though, as I could not test the individual resource (/users/:id). Also, I think the starter repo does not run, as index.js is written in commonJS but the package.json defines the project to use es modules for mocha instead.
+> I found the test overall okay. I was especially intrigued by question 3 actually, the question was really fun and interesting to think about! I did not like using replit for the assessment though, as I could not test the individual resource (/users/:id). Also, I think the starter repo does not run, as index.js is written in commonJS but the package.json defines the project to use es modules instead.
